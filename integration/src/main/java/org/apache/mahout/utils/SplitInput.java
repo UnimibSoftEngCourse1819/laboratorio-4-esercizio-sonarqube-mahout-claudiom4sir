@@ -656,6 +656,8 @@ public class SplitInput extends AbstractJob {
   public static int countLines(FileSystem fs, Path inputFile, Charset charset) throws IOException {
     int lineCount = 0;
     try (BufferedReader reader = new BufferedReader(new InputStreamReader(fs.open(inputFile), charset))){
+    	// there isn't another way to read line with BufferedReader
+    	// maybe it's better use another stream
       while (reader.readLine() != null) {
         lineCount++;
       }
