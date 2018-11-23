@@ -180,6 +180,7 @@ public class ObjectArrayList<T> extends AbstractObjectList<T> {
    */
   @Override
   @SuppressWarnings("unchecked")
+  // if you are sure that hashCode() is never used, it's not important to define it
   public boolean equals(Object otherObj) { //delta
     // overridden for performance only.
     if (!(otherObj instanceof ObjectArrayList)) {
