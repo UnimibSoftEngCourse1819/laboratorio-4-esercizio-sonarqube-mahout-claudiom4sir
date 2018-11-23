@@ -65,16 +65,16 @@ public class DisplayFuzzyKMeans extends DisplayClustering {
     RandomUtils.useTestSeed();
     DisplayClustering.generateSamples();
     writeSampleData(samples);
-    boolean runClusterer = true;
+    //boolean runClusterer = true;
     int maxIterations = 10;
     float threshold = 0.001F;
     float m = 1.1F;
-    if (runClusterer) {
+    //if (runClusterer) {
       runSequentialFuzzyKClusterer(conf, samples, output, measure, maxIterations, m, threshold);
-    } else {
-      int numClusters = 3;
-      runSequentialFuzzyKClassifier(conf, samples, output, measure, numClusters, maxIterations, m, threshold);
-    }
+    //} else {
+      //int numClusters = 3;
+      //runSequentialFuzzyKClassifier(conf, samples, output, measure, numClusters, maxIterations, m, threshold);
+    //}
     new DisplayFuzzyKMeans();
   }
   
