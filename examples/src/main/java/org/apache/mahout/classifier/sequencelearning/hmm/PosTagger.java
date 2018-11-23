@@ -215,7 +215,7 @@ public final class PosTagger {
     log.info("Trained HMM models in {} seconds!", duration);
   }
 
-  private static void testModel(String testingURL) throws IOException {
+  private static void testModel(String testingURL) throws IOException, IllegalArgumentException {
     log.info("Reading and parsing test data file from URL: {}", testingURL);
     long start = System.currentTimeMillis();
     readFromURL(testingURL, false);
@@ -242,6 +242,8 @@ public final class PosTagger {
     end = System.currentTimeMillis();
     duration = (end - start) / 1000.0;
     log.info("POS tagged test file in {} seconds!", duration);
+    if(totalCount == 0)
+    	throw new IllegalArgumentException();
     double errorRate = (double) errorCount / totalCount;
     log.info("Tagged the test file with an error rate of: {}", errorRate);
   }
