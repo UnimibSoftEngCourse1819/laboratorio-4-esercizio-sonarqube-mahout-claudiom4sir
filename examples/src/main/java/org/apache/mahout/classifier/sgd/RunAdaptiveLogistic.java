@@ -113,6 +113,7 @@ public final class RunAdaptiveLogistic {
       out.flush();
     }
     output.println(k + " records processed totally.");
+    in.close();
   }
 
   private static boolean parseArgs(String[] args) {
