@@ -56,6 +56,7 @@ public final class NewsgroupHelper {
   // 1997-01-15 00:01:00 GMT
   private static final long DATE_REFERENCE = 853286460;
   private static final long MONTH = 30 * 24 * 3600;
+  // no correction is needed, false positive
   private static final long WEEK = 7 * 24 * 3600;
   
   private final Random rand = RandomUtils.getRandom();  
